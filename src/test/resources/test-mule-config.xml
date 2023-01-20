@@ -1,19 +1,18 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:mule-velocity-module="http://www.mulesoft.org/schema/mule/mule-velocity-module"
+      xmlns:velocity-template="http://www.mulesoft.org/schema/mule/velocity-template"
+      xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+      xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-          http://www.mulesoft.org/schema/mule/mule-velocity-module http://www.mulesoft.org/schema/mule/mule-velocity-module/current/mule-mule-velocity-module.xsd">
+          http://www.mulesoft.org/schema/mule/velocity-template http://www.mulesoft.org/schema/mule/velocity-template/current/mule-velocity-template.xsd">
 
-    <mule-velocity-module:config name="config" configId="configId">
-        <mule-velocity-module:connection requiredParameter="aValue" />
-    </mule-velocity-module:config>
 
-    <flow name="sayHiFlow">
-        <mule-velocity-module:say-hi person="Mariano Gonzalez"/>
+    <flow name="template-test" doc:id="ebbb5976-ba5f-4df2-83d0-c85c997552d7" >
+        <velocity-template:process-template doc:name="Process Template" doc:id="615f1c9e-ef71-4357-8529-2cf06f245f92" templateString='Hi!  This is $name from the $project project.' logTag="TEST TAG">
+            <velocity-template:substitution-values >
+                <velocity-template:substitution-value key="name" value="TEST" />
+                <velocity-template:substitution-value key="project" value="VELOCITY" />
+            </velocity-template:substitution-values>
+        </velocity-template:process-template>
     </flow>
-
-    <flow name="retrieveInfoFlow">
-        <mule-velocity-module:retrieve-info config-ref="config"/>
-    </flow>
-
 </mule>
