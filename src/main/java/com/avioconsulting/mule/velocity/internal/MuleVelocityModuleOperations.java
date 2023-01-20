@@ -10,6 +10,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
+import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 
 /**
  * This class is a container for operations, every public method in this class
@@ -17,13 +18,7 @@ import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
  */
 public class MuleVelocityModuleOperations {
 
-  /*
-   * @MediaType(value = ANY, strict = false) public String retrieveInfo(@Config
-   * MuleVelocityModuleConfiguration configuration, @Connection
-   * MuleVelocityModuleConnection connection){ return "Using Configuration [" +
-   * configuration.getConfigId() + "] with Connection id [" + connection.getId() +
-   * "]"; }
-   */
+  @DisplayName("Process Template")
   @MediaType(value = ANY, strict = false)
   public String processTemplate(@ParameterGroup(name = "Velocity Template Info") VelocityInfo velocityInfo,
       @ParameterGroup(name = "Substitution Values") SubstitutionValues inputValues) {
@@ -38,7 +33,7 @@ public class MuleVelocityModuleOperations {
   private String parseTemplate(String template, Map<String, String> values, String logTag) {
     String message = "";
 
-    // Initializae velocity context for template parsing
+    // Initialize velocity context for template parsing
     Velocity.init();
     VelocityContext context = new VelocityContext();
 

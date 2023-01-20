@@ -9,8 +9,8 @@ import org.mule.runtime.extension.api.annotation.dsl.xml.Xml;
  * configurations, connection providers, operations and sources are going to be
  * declared.
  */
-@Xml(prefix = "mule-velocity-module")
-@Extension(name = "Mule Velocity Module")
+@Xml(prefix = "velocity-template")
+@Extension(name = "Velocity Template")
 @Configurations(MuleVelocityModuleConfiguration.class)
 public class MuleVelocityModuleExtension {
 

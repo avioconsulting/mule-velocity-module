@@ -10,13 +10,13 @@ import org.mule.runtime.extension.api.annotation.param.Parameter;
  * core from the extension.
  */
 @Operations(MuleVelocityModuleOperations.class)
-@ConnectionProviders(MuleVelocityModuleConnectionProvider.class)
 public class MuleVelocityModuleConfiguration {
-
+/*
   @Parameter
   private String configId;
 
   public String getConfigId() {
     return configId;
   }
+ */
 }
