@@ -44,7 +44,8 @@ public class MuleVelocityModuleOperations {
 
     StringWriter writer = new StringWriter();
 
-    // Pare/Evaluate the template with the specified log tag and variable substitutions
+    // Parse/Evaluate the template with the specified log tag and variable
+    // substitutions
     Velocity.evaluate(context, writer, logTag, template);
 
     message = writer.toString();
