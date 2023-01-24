@@ -137,10 +137,6 @@
                             <!-- define the steps to apply to those files -->
                             <trimTrailingWhitespace/>
                             <endWithNewline/>
-                            <eclipse>
-                                <version>4.13.0</version>                     <!-- optional -->
-                                <file>${project.basedir}/eclipse-formatter.xml</file> <!-- optional -->
-                            </eclipse>
                             <indent>
                                 <spaces>true</spaces>
                                 <spacesPerTab>2</spacesPerTab>
@@ -153,7 +149,10 @@
                         <removeUnusedImports />
                         <trimTrailingWhitespace />
                         <endWithNewline />
-                        <eclipse />
+                        <eclipse>
+                            <version>4.13.0</version>                     <!-- optional -->
+                            <file>${project.basedir}/eclipse-formatter.xml</file> <!-- optional -->
+                        </eclipse>
                         <indent>
                             <spaces>true</spaces>
                             <spacesPerTab>2</spacesPerTab>
