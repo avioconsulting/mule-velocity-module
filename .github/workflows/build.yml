@@ -52,7 +52,7 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./**/surefire-reports/*.xml
+          junit_files: ./**/surefire-reports/*.xml
 
       - name: Publish to Maven Central
         id: publish-to-maven-central
