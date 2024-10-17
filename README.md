@@ -1,10 +1,10 @@
 # Mule Velocity Module Extension
 
 ## What?
-This project contains utilities to implement Apache Velocity functionality in a Mule application 
+This project contains utilities to implement Apache Velocity functionality in a Mule application
 
 ## Why?
-The main reason for developing this project is to allow for HTML / Text template usage smoothly within a Mule application without requiring custom java code 
+The main reason for developing this project is to allow for HTML / Text template usage smoothly within a Mule application without requiring custom java code
 
 ## Changes
 ### 1.0.0

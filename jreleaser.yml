@@ -1,0 +1,67 @@
+project:
+  name: mule-velocity-module
+  description: MuleSoft velocity module to use Apache Velocity Template engine in Mule Applications
+  longDescription: |
+    The purpose of this Mule extension is to allow using Apache Velocity Template engine in Mule Applications to generate static contents.
+
+  links:
+    homepage: https://github.com/avioconsulting/
+    documentation: https://avioconsulting.github.io/mule-velocity-module/
+    license: https://github.com/avioconsulting/mule-velocity-module/blob/main/LICENSE
+    contribute: https://github.com/avioconsulting/mule-velocity-module/blob/main/CONTRIBUTING.adoc
+  authors:
+    - Adam DesJardin
+    - David Wouch
+  license: BSD 2-Clause
+  inceptionYear: "2023"
+  tags:
+    - mule
+  java:
+    groupId: com.avioconsulting.mule
+    version: "8"
+
+release:
+  github:
+    owner: 'avioconsulting'
+    overwrite: true
+    draft: false
+    sign: true
+    releaseName: '{{tagName}}'
+    skipTag: false
+    milestone:
+      close: false
+    changelog:
+      skipMergeCommits: true
+      formatted: ALWAYS
+      preset: conventional-commits
+      format: '- {{commitShortHash}} {{commitTitle}}'
+      contributors:
+        format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
+      labelers:
+        - label: 'dependencies'
+          title: 'chore(deps):'
+          order: 130
+      categories:
+        - title: '⚙️  Dependencies'
+          key: 'dependencies'
+          order: 80
+          labels:
+            - 'dependencies'
+      hide:
+        categories:
+          - 'merge'
+        contributors:
+          - 'GitHub'
+
+checksum:
+  individual: true
+
+signing:
+  active: ALWAYS
+  armored: true
+  mode: MEMORY
+
+distributions:
+  mule-health-check-api:
+    artifacts:
+      - path: target/mule-velocity-module-{{projectVersion}}-mule-plugin.jar
